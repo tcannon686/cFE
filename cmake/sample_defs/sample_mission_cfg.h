@@ -292,9 +292,9 @@
 **  \cfeescfg Maximum Length of CDS Name
 **
 **  \par Description:
-**      Indicates the maximum length (in characters) of the CDS name ('CDSName')
-**      portion of a Full CDS Name of the following form:
-**      "ApplicationName.CDSName"
+**      Indicates the maximum length (in characters, plus the null terminator)
+**      of the CDS name ('CDSName') portion of a Full CDS Name of the following
+**      form: "ApplicationName.CDSName"
 **
 **
 **  \par Limits
@@ -310,8 +310,8 @@
 **  \cfeevscfg Maximum Event Message Length
 **
 **  \par Description:
-**      Indicates the maximum length (in characters) of the formatted text
-**      string portion of an event message
+**      Indicates the maximum length (in characters, plus the null terminator)
+**      of the formatted text string portion of an event message
 **
 **  \par Limits
 **      Not Applicable
@@ -344,9 +344,9 @@
 **  \cfetblcfg Maximum Table Name Length
 **
 **  \par Description:
-**      Indicates the maximum length (in characers) of the table name
-**      ('TblName') portion of a Full Table Name of the following
-**      form: "ApplicationName.TblName"
+**      Indicates the maximum length (in characters, plus the null terminator)
+**      of the table name ('TblName') portion of a Full Table Name of the
+**      following form: "ApplicationName.TblName"
 **
 **  \par Limits
 **       This value should be kept as a multiple of 4, to maintain alignment of
@@ -493,7 +493,8 @@
 **  \cfeescfg Define Max Shell Command Size for messages
 **
 **  \par Description:
-**       Defines the maximum size in characters of the shell command.
+**      Defines the maximum size in characters, including the null terminator of
+**      the shell command.
 **
 **      This affects the layout of command/telemetry messages but does not affect run
 **      time behavior or internal allocation.
@@ -554,8 +555,9 @@
 **  \cfetblcfg Maximum Length of Full Table Name in messages
 **
 **  \par Description:
-**      Indicates the maximum length (in characters) of the entire table name
-**      within software bus messages, in "AppName.TableName" notation.
+**      Indicates the maximum length (in characters, including the null
+**      terminator) of the entire table name within software bus messages, in
+**      "AppName.TableName" notation.
 **
 **      This affects the layout of command/telemetry messages but does not affect run
 **      time behavior or internal allocation.
@@ -592,15 +594,18 @@
 **  \cfemissioncfg cFE Maximum length for pathnames within data exchange structures
 **
 **  \par Description:
-**       The value of this constant dictates the size of pathnames within all structures
-**       used for external data exchange, such as Software bus messages and table definitions.
-**       This is typically the same as OS_MAX_PATH_LEN but that is OSAL dependent --
-**       and as such it definable on a per-processor/OS basis and hence may be different
-**       across multiple processors.  It is recommended to set this to the value of the
-**       largest OS_MAX_PATH_LEN in use on any CPU on the mission.
+**       The value of this constant dictates the size (in characters, including
+**       the null terminator) of pathnames within all structures used for
+**       external data exchange, such as Software bus messages and table
+**       definitions.  This is typically the same as OS_MAX_PATH_LEN but that
+**       is OSAL dependent -- and as such it definable on a per-processor/OS
+**       basis and hence may be different across multiple processors.  It is
+**       recommended to set this to the value of the largest OS_MAX_PATH_LEN in
+**       use on any CPU on the mission.
 **
-**       This affects only the layout of command/telemetry messages and table definitions;
-**       internal allocation may use the platform-specific OS_MAX_PATH_LEN value.
+**       This affects only the layout of command/telemetry messages and table
+**       definitions; internal allocation may use the platform-specific
+**       OS_MAX_PATH_LEN value.
 **   
 **  \par Limits
 **       All CPUs within the same SB domain (mission) and ground tools must share the
@@ -617,12 +622,14 @@
 **  \cfemissioncfg cFE Maximum length for filenames within data exchange structures
 **
 **  \par Description:
-**       The value of this constant dictates the size of filenames within all structures
-**       used for external data exchange, such as Software bus messages and table definitions.
-**       This is typically the same as OS_MAX_FILE_LEN but that is OSAL dependent --
-**       and as such it definable on a per-processor/OS basis and hence may be different
-**       across multiple processors.  It is recommended to set this to the value of the
-**       largest OS_MAX_FILE_LEN in use on any CPU on the mission.
+**       The value of this constant dictates the size (in characters, including
+**       the null terminator) of filenames within all structures used for
+**       external data exchange, such as Software bus messages and table
+**       definitions.  This is typically the same as OS_MAX_FILE_LEN but that
+**       is OSAL dependent -- and as such it definable on a per-processor/OS
+**       basis and hence may be different across multiple processors.  It is
+**       recommended to set this to the value of the largest OS_MAX_FILE_LEN in
+**       use on any CPU on the mission.
 **
 **       This affects only the layout of command/telemetry messages and table definitions;
 **       internal allocation may use the platform-specific OS_MAX_FILE_LEN value.
@@ -642,12 +649,14 @@
 **  \cfemissioncfg cFE Maximum length for API names within data exchange structures
 **
 **  \par Description:
-**       The value of this constant dictates the size of filenames within all structures
-**       used for external data exchange, such as Software bus messages and table definitions.
-**       This is typically the same as OS_MAX_API_LEN but that is OSAL dependent --
-**       and as such it definable on a per-processor/OS basis and hence may be different
-**       across multiple processors.  It is recommended to set this to the value of the
-**       largest OS_MAX_API_LEN in use on any CPU on the mission.
+**       The value of this constant dictates the size (in characters, including
+**       the null terminator) of filenames within all structures used for
+**       external data exchange, such as Software bus messages and table
+**       definitions.  This is typically the same as OS_MAX_API_LEN but that is
+**       OSAL dependent -- and as such it definable on a per-processor/OS basis
+**       and hence may be different across multiple processors.  It is
+**       recommended to set this to the value of the largest OS_MAX_API_LEN in
+**       use on any CPU on the mission.
 **
 **       This affects only the layout of command/telemetry messages and table definitions;
 **       internal allocation may use the platform-specific OS_MAX_API_LEN value.
@@ -666,8 +675,9 @@
 **  \cfeescfg Maximum Length of Full CDS Name in messages
 **
 **  \par Description:
-**      Indicates the maximum length (in characters) of the entire CDS name
-**      of the following form: "ApplicationName.CDSName"
+**       Indicates the maximum length (in characters, including the null
+**       terminator) of the entire CDS name of the following form:
+**       "ApplicationName.CDSName"
 **
 **       This affects the layout of command/telemetry messages but does not affect run
 **       time behavior or internal allocation.

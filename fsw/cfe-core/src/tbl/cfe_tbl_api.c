@@ -76,7 +76,7 @@ int32 CFE_TBL_Register( CFE_TBL_Handle_t *TblHandlePtr,
 
         /* Make sure specified table name is not too long or too short */
         NameLen = strlen(Name);
-        if ((NameLen > CFE_MISSION_TBL_MAX_NAME_LENGTH) || (NameLen == 0))
+        if ((NameLen >= CFE_MISSION_TBL_MAX_NAME_LENGTH) || (NameLen == 0))
         {
             Status = CFE_TBL_ERR_INVALID_NAME;
 

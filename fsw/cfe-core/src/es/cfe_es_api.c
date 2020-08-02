@@ -1373,7 +1373,7 @@ int32 CFE_ES_RegisterCDS(CFE_ES_CDSHandle_t *CDSHandlePtr, int32 BlockSize, cons
 
         /* Make sure specified CDS name is not too long or too short */
         NameLen = strlen(Name);
-        if ((NameLen > CFE_MISSION_ES_CDS_MAX_NAME_LENGTH) || (NameLen == 0))
+        if ((NameLen >= CFE_MISSION_ES_CDS_MAX_NAME_LENGTH) || (NameLen == 0))
         {
            Status = CFE_ES_CDS_INVALID_NAME;
 

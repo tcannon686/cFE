@@ -176,7 +176,8 @@ set(OSAL_CONFIG_MAX_SYM_LEN             64)
 # required length depends on the address families in use
 set(OSAL_CONFIG_SOCKADDR_MAX_LEN        28)
 
-# Maximum length of a single message produced by OS_printf()
+# Maximum length of a single message produced by OS_printf().
+# This length must include an extra character for NULL termination.
 set(OSAL_CONFIG_PRINTF_BUFFER_SIZE      172)
 
 # Maximum number of OS_printf() messages that will be buffered

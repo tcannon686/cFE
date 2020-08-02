@@ -877,7 +877,8 @@
 **  \cfeescfg Define Max Shell Command Size
 **
 **  \par Description:
-**       Defines the maximum size in characters of the shell command.
+**       Defines the maximum size in characters (including the null
+**       terminator) of the shell command.
 **
 **  \par Limits
 **       There is a lower limit of 64 and an upper limit of #OS_MAX_CMD_LEN. Units are
